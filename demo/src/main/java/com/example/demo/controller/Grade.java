@@ -27,17 +27,18 @@ public class Grade {
     }
 
     @RequestMapping("/average/")
-    public float average(@RequestParam(required = true) String course) {
-        if (course == "语文") {
+    public double average(@RequestParam(required = true) String course) {
+        if (course.equals("language")) {
             return 90.0;
-        } else if (course == "数学") {
+        } else if (course.equals("math")) {
             return 91.5;
-        } else if (course == "英语") {
+        } else if (course.equals("english")) {
             return 85.0;
-        } else if (course == "政治") {
+        } else if (course.equals("politics")) {
             return 70.5;
         } else {
             return 0;
         }
 
     }
+}

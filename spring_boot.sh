@@ -6,7 +6,7 @@ set -o errexit
 function init() {
 	home_path="${HOME}";
 	jar_package_name="demo";
-	jar_package_path="${home_path}/code/springboot_demo/demo/target";
+	jar_package_path="${home_path}/springboot-demo/demo/target";
 	jacoco_http_port=32152
 	jacoco_http_address="127.0.0.1"
 	version="0.0.1"
@@ -19,7 +19,7 @@ function init() {
 	fi
 
 	ps -ef | grep "${jar_package_name}.jar" | grep -v "grep" | awk '{print $2}' | xargs -I {} bash -c 'if [ -n {} ]; then sudo kill -9 {}; fi'
-	cd ${home_path}/code/springboot_demo/demo;
+	cd ${home_path}/springboot-demo/demo;
 }
 
 function package() {
